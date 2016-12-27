@@ -1,1 +1,14 @@
-@import './normalize.css';
+.btn{
+    padding: 10px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.btn__state--default{
+    color: #333;
+    background-image: linear-gradient(#fcfcfc, #eee);
+    border: 1px solid #d5d5d5;
+    &:hover{
+        background-image: linear-gradient(#eee, #ddd);
+    }
+}

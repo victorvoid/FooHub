@@ -1,0 +1,9 @@
+<section class="userSearch">
+    <img alt="codercat" class="userSearch__logo" src="http://cameronmcefee.com/img/work/the-octocat/codercat.jpg"/>
+    <h2 class="userSearch__title">Search more than <strong>19M</strong> users</h2>
+    <form>
+        <input name="name" placeholder="Search GitHub" type="text" value="" class="userSearch__in" ng-model="SearchCtrl.user.name" required/>
+        <input type="submit" class="btn btn__state--default" value="Search" ng-click="SearchCtrl.submit()" >
+    </form>
+    {{SearchCtrl.user.name}}
+</section>

@@ -1,0 +1,16 @@
+.userSearch{
+    padding: 100px;
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+    .userSearch__logo{
+        max-width: 300px;
+    }
+    .userSearch__in{
+        width: 80%;
+        height: 33px;
+    }
+    .userSearch__title{
+        font-weight: 300;
+    }
+}
