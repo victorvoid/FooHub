@@ -13,10 +13,23 @@ function routesConfig($stateProvider, $urlRouterProvider, $locationProvider) {
                     url:'/',
                     component: 'homeComponent'
                })
-        // .state('users',
-        //        {
-        //            url: '/users/:q',
-        //            component: 'users'
-        //        }
-        //       );
+        .state('search',
+               {
+                   url: '/search/?q',
+                   component: 'searchComponent',
+                   params: {
+                       q: {
+                           value: null
+                       }
+                   }
+               }
+              )
+        .state('user',
+               {
+                   url: '/user/:user',
+                   component: 'userComponent',
+                   params: [
+                       'user'
+                   ]
+               });
 }

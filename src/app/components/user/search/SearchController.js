@@ -3,21 +3,26 @@ let searchService, $location;
  * @description Makes the requisition for searching users.
  * @constructor {searchService, $location}
  */
+let $stateParams = '';
 class SearchController {
-
-    constructor(_searchService, _$location){
+    constructor(_searchService, _$location, _$stateParams, $scope){
         searchService = _searchService;
+        $stateParams = _$stateParams;
         $location = _$location;
-        this.user = searchService.user;
+        this.submit();
     }
 
     submit(){
-        searchService.apiSearch().then(this.onSubmitSuccess, this.onSubmitError);
+        searchService.apiSearch($stateParams.q).then(this.onSubmitSuccess.bind(this), this.onSubmitError);
+    }
+
+    getUser(){
+        return JSON.stringify(this.user);
     }
 
     onSubmitSuccess(response){
-        console.log('onsubmit', response.data);
-        // $location.path('users/');
+        this.user = response.data;
+        console.log(this.user)
     }
 
     onSubmitError(error){
@@ -25,7 +30,7 @@ class SearchController {
     }
 }
 
-SearchController.$inject = ['searchService', '$location'];
+SearchController.$inject = ['searchService', '$location', '$stateParams', '$scope'];
 
 export const SearchUser = {
     template: require('./Search.html'),

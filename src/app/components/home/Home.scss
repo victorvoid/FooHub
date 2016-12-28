@@ -1,0 +1,12 @@
+.home{
+    padding: 100px;
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+    .home__logo{
+        max-width: 300px;
+    }
+    .home__title{
+        font-weight: 300;
+    }
+}

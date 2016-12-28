@@ -1,16 +1,19 @@
-let $location;
+let $location, $stateParams;
 class UserController {
 
-
-    constructor(_$location){
+    constructor(_$location, _$stateParams){
         $location = _$location;
+        $stateParams = _$stateParams;
+        this.user = JSON.parse($stateParams.user);
+        console.log(this.user);
     }
 
 }
 
-UserController.$inject = ['$location'];
+UserController.$inject = ['$location', '$stateParams'];
 
-export const SearchUser = {
-    template: require('./Search.html'),
-    controller: UserController
+export const User = {
+    template: require('./User.html'),
+    controller: UserController,
+    controllerAs: 'UserCtrl'
 };

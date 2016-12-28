@@ -3,14 +3,10 @@
  * @return {apiSearch, user}
  */
 export const searchService = function($http, $q){
-    let user = {
-        name: ''
-    };
-
-    function apiSearch(){
+    function apiSearch(q){
         let deferred = $q.defer();
         $http({
-            url:`https://api.github.com/users/${this.user.name}`,
+            url:`https://api.github.com/users/${q}`,
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json'
@@ -31,7 +27,6 @@ export const searchService = function($http, $q){
     }
 
     return {
-        apiSearch,
-        user
+        apiSearch
     };
 };

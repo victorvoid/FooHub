@@ -1,9 +1,19 @@
 import angular from 'angular';
-import {SearchUser} from './search/Search';
-import {searchService} from './search/Search.service.js';
+
+//Modules
 export const userModule = 'userModule';
+
+//Components
+import {SearchUser} from './search/SearchController';
+import {InputSearch} from './search/InputSearch';
+import {User} from './User';
+
+//Services
+import {searchService} from './search/Search.service.js';
 
 angular
     .module(userModule, [])
     .factory('searchService', searchService)
-    .component('searchUserComponent', SearchUser);
+    .component('searchComponent', SearchUser)
+    .component('userComponent', User)
+    .component('inputSearchComponent', InputSearch);
