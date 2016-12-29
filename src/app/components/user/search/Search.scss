@@ -1,15 +1,16 @@
-.search{
+.search__container{
     text-align: center;
-    margin-top: 20px;
     padding: 10px;
+    margin: 20px auto 0 auto;
+    max-width: 1000px;
     .search__form{
-        max-width: 700px;
+        max-width: 610px;
         margin: 0 auto;
     }
     .search__menu{
-        width: 230px;
-        overflow-y: auto;
+        width: 220px;
         float: left;
+        overflow-y: auto;
         .search__menu--block{
             list-style: none;
             padding: 0;
@@ -23,7 +24,7 @@
                     display: block;
                     font-size: 16px;
                     color: $blue-link;
-                    padding: 15px 20px;
+                    padding: 15px 0px;
                     &:hover{
                         color: darken($blue-link, 30%);
                     }
@@ -39,9 +40,28 @@
         }
     }
 
-    .search__list{
-        width: calc(75% - 40px - 20px);
+    .repositories__container, .users__container{
+        width: 68%;
         float: left;
+        @media(max-width: 700px){
+            width: 100%;
+        }
+    }
+    .found__title{
+        text-align: left;
+        font-size: 14px;
+    }
+
+    .repositories__order{
+        cursor: pointer;
+        float: right;
+        margin-top: -47px;
+        @media(max-width: 700px){
+            margin-top: 156px;
+            margin-right: 10px;
+        }
+    }
+    .search__list{
         padding: 0;
         margin-top: 40px;
         &.users{

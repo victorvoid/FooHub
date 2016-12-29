@@ -3,8 +3,14 @@
     max-width: 600px;
     margin: 0 auto;
     text-align: center;
+    @media(max-width: 800px){
+        padding: 10px;
+    }
     .home__logo{
         max-width: 300px;
+        @media(max-width: 600px){
+            max-width: 200px;
+        }
     }
     .home__title{
         font-weight: 300;

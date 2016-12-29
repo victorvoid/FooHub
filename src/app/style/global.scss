@@ -23,7 +23,12 @@ $blue-link: #216694;
     &:focus{
         border: 1px solid #756666;
     }
+
+    @media(max-width: 600px){
+        width: 100%;
+    }
 }
+
 
 //icons
 .icon-star{
@@ -38,9 +43,18 @@ $blue-link: #216694;
     width: 14px;
     height: 15px;
 }
+.icon-unordered{
+    width: 30px;
+    height: 50px;
+}
+
+
 
 //start
 body, html{
     font-family: 'Lora', serif;
+}
+figure{
+    margin: 0;
 }
 

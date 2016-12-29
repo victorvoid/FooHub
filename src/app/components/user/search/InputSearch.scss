@@ -8,4 +8,9 @@
     &:focus{
         border: 1px solid #ababab;
     }
+
+    @media(max-width: 600px){
+        margin-bottom: 13px;
+        width: 100%;
+    }
 }

@@ -49,7 +49,7 @@ export const searchService = function($http, $q){
     }
     /**
     * @param {username}
-    * @description search repositories of the user
+    * @description Get repositories of the user
     */
     function getUserRepositories(username){
         let deferred = $q.defer();
@@ -85,10 +85,31 @@ export const searchService = function($http, $q){
 
         return deferred.promise;
     }
+
+    /**
+     * @param {username, repository}
+     * @description GET repository by username
+     */
+
+    function getRepositoryByUser(username, repository){
+        let deferred = $q.defer();
+        $http({
+            url:`https://api.github.com/repos/${username}/${repository}`,
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+            .then(onSearchSuccess.bind({deferred: deferred}))
+            .catch(onSearchCatch.bind({deferred: deferred}));
+
+        return deferred.promise;
+    }
     return {
         getUsers,
         getUserRepositories,
         getRepositories,
-        getUser
+        getUser,
+        getRepositoryByUser
     };
 };

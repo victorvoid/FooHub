@@ -1,6 +1,8 @@
 <div class="user">
     <div class="user__avatar">
-        <img class="user__avatar--img" alt="" src="{{UserCtrl.user.avatar_url}}"/>
+        <figure>
+            <img class="user__avatar--img" alt="avatar" src="{{UserCtrl.user.avatar_url}}"/>
+        </figure>
     </div>
     <div class="user__details">
         <h2 class="user__name">{{UserCtrl.user.name}}</h2>
@@ -26,7 +28,11 @@
         <ul class="repositories__list">
             <li class="repositories__item" ng-repeat="repos in UserCtrl.user.repos.data">
                 <div class="repositories__content">
-                    <h3><a href="#" class="repositories__title">{{repos.name}}</a></h3>
+                    <h3>
+                        <a ui-sref="repository({username: UserCtrl.user.login, repository: repos.name})" class="repositories__title">
+                            {{repos.name}}
+                        </a>
+                    </h3>
                     <p class="repositories__description">{{repos.description}}</p>
                 </div>
                 <div class="repositories__tag">

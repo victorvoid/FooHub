@@ -1,0 +1,21 @@
+.repository__container{
+    text-align: center;
+    .repository__info{
+        a{
+            color: $blue-link;
+            text-decoration: none;
+        }
+        .repositories__tag{
+            margin-bottom: 20px;
+            .repositories__language{
+                border: 1px solid #d35400;
+                color: #d35400;
+                padding: 2px 20px;
+            }
+        }
+        .repository__github{
+            display: block;
+            margin-top: 20px;
+        }
+    }
+}

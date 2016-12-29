@@ -1,20 +1,22 @@
 let searchService, $location, $stateParams = '';
 /**
- * @description Makes the requisition for searching users.
- * @constructor {searchService, $location}
+ * @description Makes the requisition for searching users and repositories.
+ * @constructor {searchService, $location, $stateParams}
  */
 class Search {
     constructor(_searchService, _$location, _$stateParams, $scope){
         searchService = _searchService;
         $stateParams = _$stateParams;
-        console.log($stateParams);
+        $location = _$location;
         this.getUserName = $stateParams.q;
         this.getType = $stateParams.type;
-        $location = _$location;
         this.user = {};
+        this.listOrdered = false;
         this.submit();
+    } 
+    dynamicOrder(){
+        return this.listOrdered ? 'stargazers_count': '-stargazers_count';
     }
-
     /**
     * @description Submit requisition for searchService
     */
@@ -33,7 +35,6 @@ class Search {
 
     onGetUsersSuccess(response){
         this.users = response.data;
-        console.log('responseUsers: ', this.users);
     }
 
     onGetUsersError(error){
@@ -41,7 +42,6 @@ class Search {
     }
 
     onGetReposSuccess(response){
-        console.log('getRepos: ', response);
         this.repos = response;
     }
 

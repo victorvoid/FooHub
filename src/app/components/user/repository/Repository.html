@@ -1,0 +1,23 @@
+<section class="repository__container">
+    <h2 class="repository__title">{{RepositoryCtrl.repository.name}}</h2>
+    <p class="repository__description">
+        {{RepositoryCtrl.repository.description}}
+    </p>
+    <div class="repository__info">
+        <div class="repositories__tag">
+            <span class="repositories__language" ng-if="RepositoryCtrl.repository.language">{{RepositoryCtrl.repository.language}}</span>
+        </div>
+        <a href="https://github.com/{{RepositoryCtrl.repository.full_name}}/stargazers" target="_blank">
+            <svg class="icon-repositorie" >
+                <use xlink:href="#star"></use>
+            </svg>
+            {{RepositoryCtrl.repository.stargazers_count}}
+        </a>
+        <a class="repository__github" href="https://github.com/{{Repository.repository.full_name}}" target="_blank">
+            <svg class="icon-repositorie" >
+                <use xlink:href="#repository"></use>
+            </svg>
+            On Github
+        </a>
+    </div>
+</section>

@@ -34,5 +34,14 @@ function routesConfig($stateProvider, $urlRouterProvider, $locationProvider) {
                    params: [
                        'username'
                    ]
+               })
+        .state('repository',
+               {
+                   url: '/:username/:repository',
+                   component: 'repositoryComponent',
+                   params: [
+                       'username',
+                       'repository'
+                   ]
                });
 }

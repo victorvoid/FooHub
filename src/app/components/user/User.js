@@ -38,3 +38,5 @@ export const User = {
     controller: UserController,
     controllerAs: 'UserCtrl'
 };
+
+

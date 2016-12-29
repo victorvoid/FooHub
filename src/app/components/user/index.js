@@ -6,6 +6,8 @@ export const userModule = 'userModule';
 //Components
 import {SearchUser} from './search/Search';
 import {InputSearch} from './search/InputSearch';
+import {RepositoryInfo} from './repository/Repository';
+
 import {User} from './User';
 
 //Services
@@ -16,4 +18,5 @@ angular
     .factory('searchService', searchService)
     .component('searchComponent', SearchUser)
     .component('userComponent', User)
-    .component('inputSearchComponent', InputSearch);
+    .component('inputSearchComponent', InputSearch)
+    .component('repositoryComponent', RepositoryInfo);
