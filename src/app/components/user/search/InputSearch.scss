@@ -1,4 +1,11 @@
 .searchForm__in{
     width: 80%;
-    height: 33px;
+    height: 38px;
+    padding-left: 5px;
+    border: 1px solid #ddd;
+    outline: none;
+    transition: all .2s;
+    &:focus{
+        border: 1px solid #ababab;
+    }
 }

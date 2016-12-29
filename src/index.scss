@@ -1,11 +1,14 @@
 @import './app/style/normalize.css';
+
+@import './app/style/main.scss';
+@import './app/style/global.scss';
+
 @import './app/components/header/Header.scss';
 @import './app/components/footer/Footer.scss';
 @import './app/components/user/search/Search.scss';
 @import './app/components/user/search/InputSearch.scss';
 @import './app/components/home/Home.scss';
+@import './app/components/user/User.scss';
 
 
 
-@import './app/style/main.scss';
-@import './app/style/global.scss';

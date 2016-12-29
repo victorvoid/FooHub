@@ -4,7 +4,7 @@ import angular from 'angular';
 export const userModule = 'userModule';
 
 //Components
-import {SearchUser} from './search/SearchController';
+import {SearchUser} from './search/Search';
 import {InputSearch} from './search/InputSearch';
 import {User} from './User';
 

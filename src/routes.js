@@ -15,10 +15,13 @@ function routesConfig($stateProvider, $urlRouterProvider, $locationProvider) {
                })
         .state('search',
                {
-                   url: '/search/?q',
+                   url: '/search/:type/:q',
                    component: 'searchComponent',
                    params: {
                        q: {
+                           value: null
+                       },
+                       type: {
                            value: null
                        }
                    }
@@ -26,10 +29,10 @@ function routesConfig($stateProvider, $urlRouterProvider, $locationProvider) {
               )
         .state('user',
                {
-                   url: '/user/:user',
+                   url: '/:username',
                    component: 'userComponent',
                    params: [
-                       'user'
+                       'username'
                    ]
                });
 }

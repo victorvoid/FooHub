@@ -1,12 +1,12 @@
 .header{
     display: block;
-    background: #222222;
-    box-shadow: 0 2px 4px 0 rgba(0,0,0,.4);
+    border-bottom: 1px solid #f3f3f3;
     .header__logo{
-        color: #FFF;
+        color: #888;
         font-size: 25px;
         text-align: center;
         line-height: 66px;
         text-decoration: none;
+        margin-left: 10px;
     }
 };

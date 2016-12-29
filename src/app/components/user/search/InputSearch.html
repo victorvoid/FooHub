@@ -1,5 +1,20 @@
 <form class="search__form">
-    <input name="name" placeholder="Search GitHub" type="text" value="teste" class="searchForm__in" ng-model="InputSearchCtrl.q.name" required/>
-    <input type="submit" class="btn btn__state--default" value="Search" ui-sref="search({q:InputSearchCtrl.q.name})">
+
+    <input name="name"
+           arial-label="Search"
+           placeholder="Search GitHub"
+           type="search"
+           value="teste"
+           class="searchForm__in"
+           ng-model="InputSearchCtrl.q.name"
+           ng-required="required"
+    />
+
+    <input type="submit"
+           ng-disabled="!InputSearchCtrl.q.name"
+           class="btn btn__state--default"
+           value="Search"
+           ui-sref="search({q:InputSearchCtrl.q.name, type:'repositories'})"
+    >
 </form>
 

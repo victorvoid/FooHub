@@ -1,0 +1,93 @@
+.user{
+
+    .user__avatar{
+        text-align: center;
+        .user__avatar--img{
+            border-radius: 100%;
+            width: 150px;
+            height: 150px;
+            margin-top: 30px;
+        }
+    }
+    .user__details{
+        max-width: 500px;
+        margin: 0 auto;
+        .user__name{
+            text-align: center;
+            font-size: 38px;
+            margin: 2px;
+            color: $black-default;
+        }
+        .user__email{
+            text-align: center;
+            margin: 5px 0 26px 0;
+            a{
+                text-decoration: none;
+                margin: 0;
+                color: #777777
+            }
+        }
+        .user__bio{
+            text-align: center;
+            color: #252525;
+            padding: 0 5px;
+        }
+        .follow{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            padding: 20px;
+            border-bottom: 1px solid #c7c7c7;
+            .followers, .following{
+                margin-right: 10px;
+                text-align: center;
+                p{
+                    margin: 2px;
+                    color: #777777;
+                }
+                .followers__count{
+                    font-weight: 800;
+                    font-size: 22px;
+                }
+            }
+        }
+    }
+    .repositories{
+        max-width: 900px;
+        margin: 20px auto 0 auto;
+        h2{
+            margin: 50px 0 -5px 0;
+            font-size: 28px;
+            padding-left: 20px;
+        }
+        .repositories__list{
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            @media(max-width: 600px){
+                flex-direction: column;
+            }
+
+            .repositories__item{
+                flex: 1 0 30%;
+                padding: 20px;
+                .repositories__title{
+                    color: $blue-link;
+                    text-decoration: none;
+                    &:hover{
+                        border-bottom: 1px solid #4078c0
+                    }
+                }
+                .repositories__description{
+                    color: $black-default;
+                }
+                .repositories__language{
+                    border: 1px solid #d35400;
+                    color: #d35400;
+                    padding: 2px 20px;
+                }
+            }
+        }
+    }
+}

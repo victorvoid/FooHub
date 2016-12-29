@@ -1,3 +1,13 @@
+//Font
+@import url('https://fonts.googleapis.com/css?family=Lora:400,700');
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
+
+//variables
+$black-default: #2f2f2f;
+$blue-link: #216694;
+
+
+//btns
 .btn{
     padding: 10px;
     border-radius: 3px;
@@ -6,9 +16,31 @@
 
 .btn__state--default{
     color: #333;
-    background-image: linear-gradient(#fcfcfc, #eee);
     border: 1px solid #d5d5d5;
     &:hover{
         background-image: linear-gradient(#eee, #ddd);
     }
+    &:focus{
+        border: 1px solid #756666;
+    }
 }
+
+//icons
+.icon-star{
+    width: 15px;
+    height: 13px;
+}
+.icon-user{
+    width: 13px;
+    height: 13px;
+}
+.icon-repositorie{
+    width: 14px;
+    height: 15px;
+}
+
+//start
+body, html{
+    font-family: 'Lora', serif;
+}
+

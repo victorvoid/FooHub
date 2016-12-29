@@ -1,16 +1,63 @@
 <section class="search">
+    <!-- Input Component -->
     <input-search-component></input-search-component>
+
+    <!-- Menu View -->
     <aside class="search__menu">
-        <ul class="search__menu--block">
-            <li class="search__menu--item">Repositories</li>
-            <li class="search__menu--item">Code</li>
-            <li class="search__menu--item">Users</li>
-        </ul>
+        <nav>
+            <ul class="search__menu--block">
+                <li class="search__menu--item">
+                    <a ui-sref="search({q:SearchCtrl.getUserName, type:'repositories'})">
+                        <svg class="icon-repositorie" >
+                            <use xlink:href="#repositorie"></use>
+                        </svg>
+                        Repositories
+                        <span>{{SearchCtrl.repos.data.total_count}}</span>
+                    </a>
+                </li>
+                <li class="search__menu--item">
+                    <a ui-sref="search({q:SearchCtrl.getUserName, type:'user'})">
+                        <svg class="icon-user" >
+                            <use xlink:href="#user"></use>
+                        </svg>
+                        Users
+                        <span>{{SearchCtrl.users.total_count}}</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
     </aside>
-    <ul class="search__list">
-        <li class="search__item">
-            <img class="search__avatar" alt="" src="{{SearchCtrl.user.avatar_url}}"/>
-            <a class="search__user" ui-sref="user({user: SearchCtrl.getUser()})">{{SearchCtrl.user.login}}</a>
-        </li>
-    </ul>
+
+    <!-- Repositories View -->
+    <section class="repositories" ng-if="SearchCtrl.getType === 'repositories'">
+        <h2>We’ve found {{SearchCtrl.repos.data.total_count}} repository results</h2>
+        <ul class="search__list">
+            <li class="search__item" ng-repeat="repo in SearchCtrl.repos.data.items">
+                <h3 class="search__item__name"><a href="#">{{repo.full_name}}</a></h3>
+                <p>{{repo.description}}</p>
+                <div class="repositories__tag">
+                    <span class="repositories__language" ng-if="repo.language">{{ repo.language}}</span>
+                </div>
+                <div class="repositories__info">
+                    <span>
+                        <svg class="icon-star" >
+                            <use xlink:href="#star"></use>
+                        </svg>
+                        {{repo.stargazers_count}}
+                    </span>
+                </div>
+            </li>
+        </ul>
+    </section>
+
+    <!-- User View -->
+    <section  ng-if="SearchCtrl.getType === 'user'">
+        <h2>We’ve found {{SearchCtrl.users.total_count}} user results</h2>
+        <ul class="search__list users">
+            <li class="search__item" ng-repeat="user in SearchCtrl.users.items">
+                <img alt="user_foto" class="search__avatar" src="{{user.avatar_url}}"/>
+                <h3 class="search__item__name"><a ui-sref="user({username: user.login})">{{user.login}}</a></h3>
+            </li>
+        </ul>
+    </section>
 </section>
