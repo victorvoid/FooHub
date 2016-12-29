@@ -3,7 +3,6 @@ class Repository {
     constructor(_searchService, _$stateParams){
         searchService = _searchService;
         $stateParams = _$stateParams;
-        console.log('state: ', $stateParams);
         this.repositoryName = $stateParams.repository;
         this.username = $stateParams.username;
         this.submit();
@@ -16,7 +15,6 @@ class Repository {
 
     onGetRepoByUserSuccess(response){
         this.repository = response.data;
-        console.log(this.repository);
     }
 
     onGetRepoByUserError(){

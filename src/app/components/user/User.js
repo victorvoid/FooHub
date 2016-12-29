@@ -15,7 +15,6 @@ class UserController {
 
     onGetUserSuccess(response){
         this.user = response.data;
-        console.log('responseUser: ', this.user);
     }
 
     onGetUserError(error){
