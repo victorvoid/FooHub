@@ -1,7 +1,3 @@
-class HomeController {
-}
-
 export const Home = {
-  template: require('./Home.html'),
-  controller: HomeController
+  template: require('./Home.html')
 };
