@@ -18,4 +18,30 @@
             margin-top: 20px;
         }
     }
+
+    //load placeholder
+
+    .timeline-wrapper{
+        max-width: 400px;
+        margin-top: 30px;
+        margin-left: auto;
+        margin-right: auto;
+        .animated-background{
+            height: 164px;
+            .title__left{
+                top: 0;
+                width: 50px;
+            }
+            .title__right{
+                top: 0;
+                width: 50px;
+                right: 0;
+            }
+            .description__margin{
+                top: 19px;
+                width: 100%;
+                height: 6px;
+            }
+        }
+    }
 }

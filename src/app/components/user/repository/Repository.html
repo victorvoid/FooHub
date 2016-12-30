@@ -1,4 +1,15 @@
 <section class="repository__container">
+    <!-- LOAD PLACE -->
+    <div class="timeline-wrapper" ng-if="!RepositoryCtrl.loadedUserDetail">
+        <div class="repository-item">
+            <div class="animated-background">
+                <div class="background-masker title__left"></div>
+                <div class="background-masker title__right"></div>
+                    <div class="background-masker description__margin"></div>
+
+            </div>
+        </div>
+    </div>
     <h2 class="repository__title">{{RepositoryCtrl.repository.name}}</h2>
     <p class="repository__description">
         {{RepositoryCtrl.repository.description}}
