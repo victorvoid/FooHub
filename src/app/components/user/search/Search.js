@@ -1,17 +1,20 @@
-let searchService, $location, $stateParams = '';
+let searchService, $location, $stateParams = '', $timeout;
 /**
  * @description Makes the requisition for searching users and repositories.
  * @constructor {searchService, $location, $stateParams}
  */
 class Search {
-    constructor(_searchService, _$location, _$stateParams, $scope){
+    constructor(_searchService, _$location, _$stateParams,  _$timeout){
         searchService = _searchService;
         $stateParams = _$stateParams;
         $location = _$location;
+        $timeout = _$timeout;
         this.getUserName = $stateParams.q;
         this.getType = $stateParams.type;
         this.user = {};
         this.listOrdered = false;
+        this.loadedUser = false;
+        this.loadedRepository = false;
         this.submit();
     } 
     dynamicOrder(){
@@ -35,6 +38,9 @@ class Search {
 
     onGetUsersSuccess(response){
         this.users = response.data;
+        $timeout(() => {
+            this.loadedUser = true;
+        }, 1000);
     }
 
     onGetUsersError(error){
@@ -43,6 +49,9 @@ class Search {
 
     onGetReposSuccess(response){
         this.repos = response;
+        $timeout(() => {
+            this.loadedRepository = true;
+        }, 1000);
     }
 
     onGetReposError(error){
@@ -50,7 +59,7 @@ class Search {
     }
 }
 
-Search.$inject = ['searchService', '$location', '$stateParams', '$scope'];
+Search.$inject = ['searchService', '$location', '$stateParams', '$timeout'];
 
 export const SearchUser = {
     template: require('./Search.html'),

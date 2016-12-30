@@ -1,10 +1,34 @@
 <div class="user">
-    <div class="user__avatar">
-        <figure>
-            <img class="user__avatar--img" alt="avatar" src="{{UserCtrl.user.avatar_url}}"/>
-        </figure>
+
+    <div class="timeline-wrapper" ng-if="!UserCtrl.loadedUserDetail">
+        <div class="user-item">
+            <div class="animated-background">
+                <div class="background-masker avatar__left"></div>
+                <div class="background-masker avatar__right"></div>
+                <div class="background-masker title__margin"></div>
+                <div class="background-masker title__left"></div>
+                <div class="background-masker title__right"></div>
+                <div class="background-masker email__margin"></div>
+                <div class="background-masker email__left"></div>
+                <div class="background-masker email__right"></div>
+                <div class="background-masker bio__margin"></div>
+                <div class="background-masker bio__left"></div>
+                <div class="background-masker bio__right"></div>
+                <div class="background-masker follow__margin"></div>
+                <div class="background-masker follow__middle"></div>
+                <div class="background-masker follow__left"></div>
+                <div class="background-masker follow__right"></div>
+
+            </div>
+        </div>
     </div>
-    <div class="user__details">
+
+    <div class="user__details" ng-if="UserCtrl.loadedUserDetail">
+        <div class="user__avatar">
+            <figure>
+                <img class="user__avatar--img" alt="avatar" ng-src="{{UserCtrl.user['avatar_url']}}"/>
+            </figure>
+        </div>
         <h2 class="user__name">{{UserCtrl.user.name}}</h2>
         <p class="user__email">
             <a href="mailto:{{UserCtrl.user.email}}">{{UserCtrl.user.email}}</a>
@@ -25,7 +49,15 @@
     </div>
     <div class="repositories">
         <h2>Repositories</h2>
-        <ul class="repositories__list">
+        <!-- LOAD PLACE -->
+        <div class="repository__load" ng-if="!UserCtrl.loadedRepository">
+            <div class="repository-item">
+                <div class="animated-background">
+                    <div class="background-masker title__margin"></div>
+                </div>
+            </div>
+        </div>
+        <ul class="repositories__list" ng-if="UserCtrl.loadedRepository">
             <li class="repositories__item" ng-repeat="repos in UserCtrl.user.repos.data">
                 <div class="repositories__content">
                     <h3>

@@ -48,8 +48,152 @@ $blue-link: #216694;
     height: 50px;
 }
 
+//load
+.user-item {
+    background: #fff;
+    border-color: #e5e6e9 #dfe0e4 #d0d1d5;
+    border-radius: 3px;
+    padding: 12px;
 
+    margin: 0 auto;
+    min-height: 200px;
 
+    //in profile
+    // position: absolute;
+    width: 472px;
+    // left: 0;
+    // right: 0;
+}
+
+@keyframes placeHolderShimmer{
+    0%{
+        background-position: -468px 0
+    }
+    100%{
+        background-position: 468px 0
+    }
+}
+.animated-background {
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-name: placeHolderShimmer;
+    animation-timing-function: linear;
+    background: #f6f7f8;
+    background: linear-gradient(to right, #eeeeee 8%, #dddddd 18%, #eeeeee 33%);
+    background-size: 800px 104px;
+    height: 338px;
+    position: relative;
+}
+.background-masker {
+    background: #fff;
+    position: absolute;
+}
+
+/* Every thing below this is just positioning */
+
+.background-masker.avatar__left{
+    top: 0;
+    left: 0;
+    height: 150px;
+    width: 150px;
+}
+
+.background-masker.avatar__right{
+    top: 0;
+    right: 0;
+    height: 150px;
+    width: 150px;
+}
+
+.background-masker.title__margin{
+    top: 150px;
+    left: 0;
+    height: 17px;
+    width: 100%;
+}
+
+.background-masker.title__left{
+    top: 160px;
+    left: 0;
+    height: 22px;
+    width: 120px;
+}
+
+.background-masker.title__right{
+    top: 160px;
+    right: 0;
+    height: 22px;
+    width: 120px;
+}
+
+.background-masker.email__margin{
+    top: 182px;
+    left: 0;
+    height: 7px;
+    width: 100%;
+}
+
+.background-masker.email__left{
+    top: 182px;
+    left: 0;
+    height: 18px;
+    width: 136px;
+}
+
+.background-masker.email__right{
+    top: 182px;
+    right: 0;
+    height: 18px;
+    width: 136px;
+}
+
+.background-masker.bio__margin{
+    top: 200px;
+    left: 0;
+    height: 5px;
+    width: 100%;
+}
+
+.background-masker.bio__left{
+    top: 200px;
+    left: 0;
+    height: 18px;
+    width: 57px;
+}
+.background-masker.bio__right{
+    top: 200px;
+    right: 0;
+    height: 18px;
+    width: 57px;
+}
+.background-masker.follow__margin{
+    top: 218px;
+    right: 0;
+    height: 60px;
+    width: 100%;
+}
+
+.background-masker.follow__middle{
+    top: 278px;
+    left: calc(50% - 85px);
+    height: 60px;
+    width: 158px;
+}
+
+.background-masker.follow__left{
+    top: 277px;
+    left: 0;
+    height: 76px;
+    width: 80px;
+}
+
+.background-masker.follow__right{
+    top: 277px;
+    right: 0;
+    height: 63px;
+    width: 91px;
+}
 //start
 body, html{
     font-family: 'Lora', serif;

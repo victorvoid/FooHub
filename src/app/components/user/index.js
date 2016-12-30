@@ -13,6 +13,7 @@ import {User} from './User';
 //Services
 import {searchService} from './search/Search.service.js';
 
+
 angular
     .module(userModule, [])
     .factory('searchService', searchService)

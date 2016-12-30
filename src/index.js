@@ -16,9 +16,13 @@ import routesConfig from './routes';
 //style
 import './index.scss';
 
+//services
+import {onlineService} from './app/services/onlineStatus.service.js';
+
 angular
     .module('app', ['ui.router', userModule])
     .config(routesConfig)
+    .factory('onlineStatus', onlineService)
     .component('headerComponent', Header)
     .component('homeComponent', Home)
     .component('footerComponent', Footer);

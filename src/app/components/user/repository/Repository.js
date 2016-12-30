@@ -5,6 +5,7 @@ class Repository {
         $stateParams = _$stateParams;
         this.repositoryName = $stateParams.repository;
         this.username = $stateParams.username;
+        this.loadedUserDetail = false;
         this.submit();
         this.repository = {};
     }
@@ -15,6 +16,7 @@ class Repository {
 
     onGetRepoByUserSuccess(response){
         this.repository = response.data;
+        this.loadedUserDetail = true;
     }
 
     onGetRepoByUserError(){

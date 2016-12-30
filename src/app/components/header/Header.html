@@ -1,3 +1,11 @@
 <header class="header">
+    <p class="online_status--off" ng-if="online_status == false">
+        <strong>
+            <svg class="icon-dislike" viewBox="0 0 58 58">
+                <use xlink:href="#dislike"></use>
+            </svg>
+        </strong>
+        It seems like you lost internet connection.
+    </p>
     <h1><a ui-sref="app" class="header__logo">GitHub api</a></h1>
 </header>

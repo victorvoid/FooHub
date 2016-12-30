@@ -113,4 +113,40 @@
             }
         }
     }
+    //repository load
+    .timeline-wrapper{
+        max-width: 700px;
+        margin-top: 40px;
+        .animated-background{
+            height: 97px;
+        }
+        .title__margin{
+            top: 15px;
+            height: 10px;
+        }
+    }
+
+    //users load
+    .timeline-wrapper{
+        .user-item{
+            min-height: 72px;
+            margin: 0;
+            padding: 0;
+            margin-top: 30px;
+            .animated-background{
+                height: 76px;
+            }
+            .avatar__margin{
+                left: 81px;
+                width: 8px;
+                height: 97px;
+            }
+            .title__margin{
+                top: 15px;
+                left: 88px;
+                width: 384;
+                height: 10px;
+            }
+        }
+    }
 }

@@ -1,3 +1,3 @@
 export const Home = {
-  template: require('./Home.html')
+    template: require('./Home.html')
 };
