@@ -2,32 +2,32 @@
     <!-- Input Component -->
     <input-search-component></input-search-component>
 
-    <span class="repositories__order" ng-if="SearchCtrl.getType === 'repositories'">
-        <svg class="icon-unordered" viewBox="0 0 10 14" ng-click="SearchCtrl.listOrdered = !SearchCtrl.listOrdered">
+    <button title="Will sort by number of stars in ascending to descending and vice versa" arial-label="Change sort order of ordering of the repositories according to the stars" class="repositories__order" ng-if="SearchCtrl.getType === 'repositories'">
+        <svg class="icon-unordered" viewBox="0 0 10 14" ng-click="SearchCtrl.listOrdered = !SearchCtrl.listOrdered" width="30">
             <use xlink:href="#ordered"  ng-if="!SearchCtrl.listOrdered"></use>
             <use xlink:href="#unordered"  ng-if="SearchCtrl.listOrdered"></use>
         </svg>
-    </span>
+    </button>
     <!-- Menu View -->
     <aside class="search__menu">
-        <nav>
+        <nav role="navigation">
             <ul class="search__menu--block">
                 <li class="search__menu--item">
-                    <a ui-sref="search({q:SearchCtrl.getUserName, type:'repositories'})">
-                        <svg class="icon-repositorie" >
+                    <a title="Will list all repositories of your Search" role="button" ui-sref="search({q:SearchCtrl.getUserName, type:'repositories'})">
+                        <svg width="40" height="40" class="icon-repositorie" >
                             <use xlink:href="#repository"></use>
                         </svg>
                         Repositories
-                        <span>{{SearchCtrl.repos.data.total_count}}</span>
+                        <span arial-label="Number of repositories found">{{SearchCtrl.repos.data.total_count}}</span>
                     </a>
                 </li>
                 <li class="search__menu--item">
-                    <a ui-sref="search({q:SearchCtrl.getUserName, type:'user'})">
-                        <svg class="icon-user" >
+                    <a title="Users will be listed" ui-sref="search({q:SearchCtrl.getUserName, type:'user'})">
+                        <svg class="icon-user" width="40" height="40">
                             <use xlink:href="#user"></use>
                         </svg>
                         Users
-                        <span>{{SearchCtrl.users.total_count}}</span>
+                        <span arial-label="Number of repositories found">{{SearchCtrl.users.total_count}}</span>
                     </a>
                 </li>
             </ul>
@@ -53,11 +53,11 @@
                 </h3>
                 <p>{{repo.description}}</p>
                 <div class="repositories__tag">
-                    <span class="repositories__language" ng-if="repo.language">{{ repo.language}}</span>
+                    <span class="repositories__language" arial-label="tag language of the repository" ng-if="repo.language">{{ repo.language}}</span>
 
                 </div>
                 <div class="repositories__info">
-                    <span>
+                    <span arial-label="Number of star in repository">
                         <svg class="icon-star" >
                             <use xlink:href="#star"></use>
                         </svg>
@@ -80,9 +80,7 @@
             </div>
         <ul class="search__list users" ng-if="SearchCtrl.loadedUser">
             <li class="search__item" ng-repeat="user in SearchCtrl.users.items">
-                <figure>
-                    <img alt="user_foto" class="search__avatar" ng-src="{{user.avatar_url}}"/>
-                </figure>
+                <img alt="user's avatar"  class="search__avatar" ng-src="{{user.avatar_url}}"/>
                 <h3 class="search__item__name"><a ui-sref="user({username: user.login})">{{user.login}}</a></h3>
             </li>
         </ul>
