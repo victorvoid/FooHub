@@ -27,7 +27,7 @@
                             <use xlink:href="#user"></use>
                         </svg>
                         Users
-                        <span arial-label="Number of repositories found">{{SearchCtrl.users.total_count}}</span>
+                        <span arial-label="Number of users found">{{SearchCtrl.users.total_count}}</span>
                     </a>
                 </li>
             </ul>
@@ -46,30 +46,34 @@
                 </div>
             </div>
         </div>
+        <!--/ LOAD PLACE -->
+
         <ul class="search__list" ng-if="SearchCtrl.loadedRepository">
             <li class="search__item"  ng-repeat="repo in SearchCtrl.repos.data.items | orderBy: SearchCtrl.dynamicOrder()">
                 <h3 class="search__item__name">
-                    <a href="/{{repo.full_name}}">{{repo.full_name}}</a>
+                    <a title="Will take repository's more information" href="/{{repo.full_name}}">{{repo.full_name}}</a>
                 </h3>
                 <p>{{repo.description}}</p>
                 <div class="repositories__tag">
-                    <span class="repositories__language" arial-label="tag language of the repository" ng-if="repo.language">{{ repo.language}}</span>
+                    <span title="It's a tag language of the repository" class="repositories__language"  ng-if="repo.language">{{ repo.language}}</span>
 
                 </div>
                 <div class="repositories__info">
-                    <span arial-label="Number of star in repository">
+                    <span  title="Stargazers" arial-label="Number of star in repository">
                         <svg class="icon-star" >
                             <use xlink:href="#star"></use>
                         </svg>
                         {{repo.stargazers_count}}
                     </span>
                 </div>
+            </li>
         </ul>
     </section>
 
     <!-- User View -->
     <section class="users__container" ng-if="SearchCtrl.getType === 'user'">
         <h2 class="found__title">We’ve found {{SearchCtrl.users.total_count}} user results</h2>
+            <!-- LOAD PLACE -->
             <div class="timeline-wrapper" ng-if="!SearchCtrl.loadedUser">
                 <div class="user-item">
                     <div class="animated-background">
@@ -78,10 +82,14 @@
                     </div>
                 </div>
             </div>
+            <!--/ LOAD PLACE -->
+
         <ul class="search__list users" ng-if="SearchCtrl.loadedUser">
             <li class="search__item" ng-repeat="user in SearchCtrl.users.items">
-                <img alt="user's avatar"  class="search__avatar" ng-src="{{user.avatar_url}}"/>
-                <h3 class="search__item__name"><a ui-sref="user({username: user.login})">{{user.login}}</a></h3>
+                <img alt="It user's avatar"  class="search__avatar" ng-src="{{user.avatar_url}}"/>
+                <h3 class="search__item__name">
+                    <a title="Will take user's more information" ui-sref="user({username: user.login})">{{user.login}}</a>
+                </h3>
             </li>
         </ul>
     </section>
