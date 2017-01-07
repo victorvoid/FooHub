@@ -18,4 +18,11 @@
             text-decoration: none;
         }
     }
+    .arrow-top{
+        background: transparent;
+        border: none;
+        .icon-arrow{
+            transform: rotate(90deg);
+        }
+    }
 }

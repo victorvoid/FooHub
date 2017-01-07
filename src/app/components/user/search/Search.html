@@ -2,7 +2,7 @@
     <!-- Input Component -->
     <input-search-component></input-search-component>
 
-    <button title="Will sort by number of stars in ascending to descending and vice versa" arial-label="Change sort order of ordering of the repositories according to the stars" class="repositories__order" ng-if="SearchCtrl.getType === 'repositories'">
+    <button title="Will sort by number of stars in ascending to descending and vice versa" class="repositories__order" ng-if="SearchCtrl.getType === 'repositories'">
         <svg class="icon-unordered" viewBox="0 0 10 14" ng-click="SearchCtrl.listOrdered = !SearchCtrl.listOrdered" width="30">
             <use xlink:href="#ordered"  ng-if="!SearchCtrl.listOrdered"></use>
             <use xlink:href="#unordered"  ng-if="SearchCtrl.listOrdered"></use>
